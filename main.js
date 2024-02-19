@@ -77,24 +77,26 @@ client.on("ready", async () => {
 
 	await registerSlashCommands()
 
-	client.application.commands.permissions.set({
-	 guild: process.env["GUILD_ID"],
-	 command: returned_commands["card"].id,
-	 token: process.env["GUILD_TOKEN"],
-	 permissions: [
-	   {
-	     id: ALL_CHANNELS(process.env["GUILD_ID"]),
-	     type: 3,
-	     permission: false,
-	   },
-	   {
-	     id: process.env["CHANNEL_ID"],
-	     type: 3,
-	     permission: true,
-	   },
-	]})
-	  .then(console.log)
-	  .catch(console.error);
+	["card", "uncard"].forEach(cmdName => {
+		client.application.commands.permissions.set({
+		 guild: process.env["GUILD_ID"],
+		 command: returned_commands[cmdName].id,
+		 token: process.env["GUILD_TOKEN"],
+		 permissions: [
+		   {
+		     id: ALL_CHANNELS(process.env["GUILD_ID"]),
+		     type: 3,
+		     permission: false,
+		   },
+		   {
+		     id: process.env["CHANNEL_ID"],
+		     type: 3,
+		     permission: true,
+		   },
+		]})
+		  .then(console.log)
+		  .catch(console.error);
+	})
 })
 
 client.login(process.env["TOKEN"])
