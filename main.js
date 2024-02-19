@@ -77,7 +77,7 @@ client.on("ready", async () => {
 
 	await registerSlashCommands()
 
-	["card", "uncard"].forEach(cmdName => {
+	Object.keys(returned_commands).forEach(cmdName => {
 		client.application.commands.permissions.set({
 		 guild: process.env["GUILD_ID"],
 		 command: returned_commands[cmdName].id,
