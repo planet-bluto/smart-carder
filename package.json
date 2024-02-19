@@ -1,0 +1,17 @@
+{
+  "name": "smart-carder",
+  "version": "0.0.1",
+  "description": "Give smart card after a vote of 3",
+  "main": "main.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "author": "PlanetBluto",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "node-fetch": "^2.7.0"
+  }
+}
