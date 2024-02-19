@@ -94,7 +94,7 @@ client.on("ready", async () => {
 		     permission: true,
 		   },
 		]})
-		  .then(console.log)
+		  .then(res => {console.log(`${cmdName} Permissions Set`)})
 		  .catch(console.error);
 	})
 })
