@@ -41,11 +41,12 @@ async function execute(interaction) {
 	var total = 0
 	function update(val, r) {
 		total += val
+
+		print("New Total: ", total)
+		r.message.edit(r.message.content.split(" | ")[0] + " | " + `${total} Votes`)
+
 		if (total >= 3) {
 			collector.stop()
-		} else {
-			print("New Total: ", total)
-			r.message.edit(r.message.content.split(" | ")[0] + " | " + `${total} Votes`)
 		}
 	}
 
