@@ -18,7 +18,9 @@ print(query)
 var new_search_params = new URLSearchParams({
 	"client_id": CLIENT_ID,
 	"client_secret": CLIENT_SECRET,
-	"grant_type": "client_credentials",
+	"grant_type": "authorization_code",
+	"code": query.code,
+	"redirect_uri": REDIRECT_URI,
 	"scope": "applications.commands applications.commands.permissions.update",
 })
 
