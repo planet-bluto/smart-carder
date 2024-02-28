@@ -39,7 +39,7 @@ async function execute(interaction) {
 	const filter = (reaction, user) => (reaction.emoji.name == POS_EMOJI || reaction.emoji.name == NEG_EMOJI)
 	var collector = msg.createReactionCollector({ dispose: true, filter, time: (60_000 * 60) })
 
-	var total = 0
+	var total = 1
 	function update(val, r) {
 		if (r.)
 		total += val
