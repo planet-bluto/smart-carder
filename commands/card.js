@@ -34,6 +34,7 @@ async function execute(interaction) {
 	var msg = await interaction.reply({content: `# Do we add <@${member.id}>? | 0 Votes`, fetchReply: true })
 	await msg.react(POS_EMOJI) // isGreen
 	await msg.react(NEG_EMOJI) // isRed
+	await msg.fetch()
 
 	const filter = (reaction, user) => (reaction.emoji.name == POS_EMOJI || reaction.emoji.name == NEG_EMOJI)
 	var collector = msg.createReactionCollector({ dispose: true, filter, time: (60_000 * 60) })
